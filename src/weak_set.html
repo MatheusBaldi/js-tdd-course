@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+
+  let obj1 = {
+    name: 'Jonas',
+    age: 33
+  };
+
+  let obj2 = {
+    name: 'Carl',
+    age: 16
+  };
+
+  // WeakSet só aceita objects (não aceita tipos primitivos: string, integers...)
+  let ws = new WeakSet([obj1, obj2]);
+  console.log(ws);
+
+  ws.has(obj1);
+  //true
+
+  ws.has(obj2);
+  //true
+
+  ws.add({type: 'ojv'});
+  //WeakSet {{…}, {…}, {…}}
+
+  ws.delete(obj2);
+  //true
+
+  ws.clear();
+  // VM1134:1 Uncaught TypeError: ws.clear is not a function
+  //     at <anonymous>:1:4
+  // (anonymous) @ VM1134:1
+
+  ws.values();
+  // VM1168:1 Uncaught TypeError: ws.values is not a function
+  //     at <anonymous>:1:4
+  // (anonymous) @ VM1168:1
+
+</script>
+
+</body>
+</html>
