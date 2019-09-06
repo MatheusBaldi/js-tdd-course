@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+</body>
+
+<script>
+  async function request(url) {
+    // fetch(url)
+    //   .then((data) => data.json())
+    //   .then((data) => dados.next(data));
+    data = await fetch(url);
+    data = await data.json();
+    dados.next(data);
+  }
+
+  function* requestGen() {
+    console.log('Buscando posts...');
+    const posts = yield request('https://jsonplaceholder.typicode.com/posts');
+    console.log(posts);
+
+    console.log('Buscando github...');
+    const github = yield request('https://api.github.com/users/MatheusBaldi');
+    console.log(github);
+  }
+
+  const dados = requestGen();
+  dados.next();
+
+</script>
+
+</html>
+
