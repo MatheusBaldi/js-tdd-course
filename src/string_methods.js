@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const text = 'Lorem ipsum dolot sit amet';
 
 console.log('startsWith', text.startsWith('Lorem'));
