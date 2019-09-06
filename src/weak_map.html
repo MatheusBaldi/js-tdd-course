@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+
+  let obj1 = {
+    name: 'Jonas',
+    age: 33
+  };
+
+  let obj2 = {
+    name: 'Carl',
+    age: 16
+  };
+
+  let wm = new WeakMap();
+
+  wm.set(obj1, 'Info do Jonas');
+  wm.set(obj2, 'Info do Carl');
+
+  console.log(wm);
+
+</script>
+
+</body>
+</html>
