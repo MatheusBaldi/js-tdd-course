@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+
+  const mySet = new Set(['martin', 'melman', 'gloria']);
+
+  mySet.add('alex');
+  mySet.add('alex');
+  mySet.add('alex');
+  mySet.add('alex');
+  mySet.add('alex');
+
+  console.log('size', mySet.size);
+  console.log('set', mySet);
+  console.log('delete martin', mySet.delete('martin'));
+  console.log('has martin', mySet.has('martin'));
+  console.log('has melman', mySet.has('melman'));
+
+  console.log('undefined pelo index mySet[1]', mySet[1]);
+
+  console.log('mySet.values() é iterator', mySet.values());
+
+  let it = mySet.values();
+
+  console.log(it.next());
+  console.log(it.next());
+  console.log(it.next());
+  console.log(it.next());
+
+
+  it = mySet.values();
+
+  for (name of it) {
+    console.log(name);
+  }
+
+</script>
+
+</body>
+</html>
