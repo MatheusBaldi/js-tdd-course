@@ -13,9 +13,13 @@
     // fetch(url)
     //   .then((data) => data.json())
     //   .then((data) => dados.next(data));
-    data = await fetch(url);
-    data = await data.json();
-    dados.next(data);
+    try {
+      data = await fetch(url);
+      data = await data.json();
+      dados.next(data);
+    } catch(err) {
+      console.error('We got an error', err);
+    }
   }
 
   function* requestGen() {
