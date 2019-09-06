@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+</body>
+
+<script>
+
+  async function getUsers(users) {
+    // Não coloca await em cada fetch, pois o segundo só seria chamado após a execução do primeiro
+    const promises = users.map((user) => fetch(`https://api.github.com/users/${user}`).then(r => r.json()));
+
+    // Passa a lista de promises pro método Promise.all([promise1, promise2]),
+    // dessa forma as duas serão executadas simultaneamente
+    const people = await Promise.all(promises);
+    console.log(people);
+  }
+
+  getUsers(['MatheusBaldi', 'willianjusten']);
+
+</script>
+
+</html>
