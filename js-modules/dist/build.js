@@ -94,7 +94,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var ramda__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ramda */ \"./node_modules/ramda/es/index.js\");\n\nvar arr1 = [1, 1, 1, 2, 2, 3, 4, 5, 6, 6];\nvar arr2 = [5, 6, 6, 6, 7, 7, 8, 9, 10, 1];\nvar arr3 = ramda__WEBPACK_IMPORTED_MODULE_0__[\"union\"](arr1, arr2);\nconsole.log(arr3);\n\n//# sourceURL=webpack:///./app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var ramda__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ramda */ \"./node_modules/ramda/es/index.js\");\n\nvar arr1 = [1, 1, 1, 2, 2, 3, 4, 5, 6, 6];\nvar arr2 = [5, 6, 6, 6, 7, 7, 8, 9, 10, 1];\nvar arr3 = Object(ramda__WEBPACK_IMPORTED_MODULE_0__[\"union\"])(arr1, arr2);\nvar arr4 = Object(ramda__WEBPACK_IMPORTED_MODULE_0__[\"uniq\"])(arr1);\nconsole.log(arr3);\nconsole.log(arr4);\n\n//# sourceURL=webpack:///./app.js?");
 
 /***/ }),
 
