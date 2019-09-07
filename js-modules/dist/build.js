@@ -94,7 +94,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var ramda__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ramda */ \"./node_modules/ramda/es/index.js\");\n\nvar arr1 = [1, 1, 1, 2, 2, 3, 4, 5, 6, 6];\nvar arr2 = [5, 6, 6, 6, 7, 7, 8, 9, 10, 1];\nvar arr3 = Object(ramda__WEBPACK_IMPORTED_MODULE_0__[\"union\"])(arr1, arr2);\nvar arr4 = Object(ramda__WEBPACK_IMPORTED_MODULE_0__[\"uniq\"])(arr1);\nconsole.log(arr3);\nconsole.log(arr4);\n\n//# sourceURL=webpack:///./app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var ramda__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ramda */ \"./node_modules/ramda/es/index.js\");\n/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils */ \"./utils.js\");\n\n\nvar arr1 = [1, 1, 1, 2, 2, 3, 4, 5, 6, 6];\nvar arr2 = [5, 6, 6, 6, 7, 7, 8, 9, 10, 1];\nvar arr3 = Object(ramda__WEBPACK_IMPORTED_MODULE_0__[\"union\"])(arr1, arr2);\nvar arr4 = Object(ramda__WEBPACK_IMPORTED_MODULE_0__[\"uniq\"])(arr1);\nconsole.log(arr3);\nconsole.log(arr4);\nconsole.log(Object(_utils__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(3, 2));\nconsole.log(Object(_utils__WEBPACK_IMPORTED_MODULE_1__[\"sub\"])(3, 2));\nconsole.log(Object(_utils__WEBPACK_IMPORTED_MODULE_1__[\"multiplicacao\"])(3, 2));\nconsole.log(Object(_utils__WEBPACK_IMPORTED_MODULE_1__[\"div\"])(3, 2));\n\n//# sourceURL=webpack:///./app.js?");
 
 /***/ }),
 
@@ -4043,6 +4043,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _int
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _internal_curry3_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./internal/_curry3.js */ \"./node_modules/ramda/es/internal/_curry3.js\");\n\n\n/**\n * Creates a new list out of the two supplied by applying the function to each\n * equally-positioned pair in the lists. The returned list is truncated to the\n * length of the shorter of the two input lists.\n *\n * @function\n * @memberOf R\n * @since v0.1.0\n * @category List\n * @sig ((a, b) -> c) -> [a] -> [b] -> [c]\n * @param {Function} fn The function used to combine the two elements into one value.\n * @param {Array} list1 The first array to consider.\n * @param {Array} list2 The second array to consider.\n * @return {Array} The list made by combining same-indexed elements of `list1` and `list2`\n *         using `fn`.\n * @example\n *\n *      const f = (x, y) => {\n *        // ...\n *      };\n *      R.zipWith(f, [1, 2, 3], ['a', 'b', 'c']);\n *      //=> [f(1, 'a'), f(2, 'b'), f(3, 'c')]\n * @symb R.zipWith(fn, [a, b, c], [d, e, f]) = [fn(a, d), fn(b, e), fn(c, f)]\n */\nvar zipWith = /*#__PURE__*/Object(_internal_curry3_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(function zipWith(fn, a, b) {\n  var rv = [];\n  var idx = 0;\n  var len = Math.min(a.length, b.length);\n  while (idx < len) {\n    rv[idx] = fn(a[idx], b[idx]);\n    idx += 1;\n  }\n  return rv;\n});\n/* harmony default export */ __webpack_exports__[\"default\"] = (zipWith);\n\n//# sourceURL=webpack:///./node_modules/ramda/es/zipWith.js?");
+
+/***/ }),
+
+/***/ "./utils.js":
+/*!******************!*\
+  !*** ./utils.js ***!
+  \******************/
+/*! exports provided: sub, multiplicacao, div, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"sub\", function() { return sub; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"multiplicacao\", function() { return mult; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"div\", function() { return div; });\nfunction sum(a, b) {\n  return a + b;\n} // named export\n// permite vários exports dentro de um arquivo\n// só pode chamar com o mesmo nome\n// import precisa das chaves\n\n\nfunction sub(a, b) {\n  return a - b;\n}\n\nfunction mult(a, b) {\n  return a * b;\n}\n\nfunction div(a, b) {\n  return a / b;\n}\n\n // método principal\n// só pode ter um default por arquivo\n// importar com qualquer nome\n// não precisa utilizar as chaves no import\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (sum);\n\n//# sourceURL=webpack:///./utils.js?");
 
 /***/ })
 
