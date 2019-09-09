@@ -5,6 +5,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 
 module.exports = {
+  devtool: 'eval',
   entry: {
     filename: './app.js'
   },
@@ -25,8 +26,7 @@ module.exports = {
     minimizer: [new UglifyJsPlugin({
       uglifyOptions: {
         compress: {},
-        mangle: true,
-        output: { comments: false },
+        output: { comments: false }
       }
     })],
   },
