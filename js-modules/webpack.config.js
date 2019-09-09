@@ -20,9 +20,11 @@ module.exports = {
     ]
   },
   optimization: {
+    minimize: true,
     minimizer: [new UglifyJsPlugin({
       uglifyOptions: {
         compress: {},
+        mangle: true,
         output: { comments: false },
       }
     })],
