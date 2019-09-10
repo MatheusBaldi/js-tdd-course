@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "./node_modules/.bin/eslint src/*.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/mocha tests/**/*.spec.js"
   },
   "husky": {
     "hooks": {
@@ -16,9 +16,11 @@
   "author": "Matheus Henrique Baldi de Almeida",
   "license": "MIT",
   "devDependencies": {
+    "chai": "^4.2.0",
     "eslint": "^6.3.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",
-    "husky": "^3.0.5"
+    "husky": "^3.0.5",
+    "mocha": "^6.2.0"
   }
 }
