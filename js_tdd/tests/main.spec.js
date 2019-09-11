@@ -1,3 +1,5 @@
+const expect = require('chai').expect;
+
 describe('Main', function() {
   let arr; // define a variávvel no escopo mais alto
 
@@ -22,20 +24,27 @@ describe('Main', function() {
   afterEach(function() {
   });
 
-
+  it('should be an array', function() {
+    expect(arr).to.be.an('array');
+  });
 
   it('should have a size of 4 when pushed another value to the array', function() {
     arr.push(4);
-    console.log(arr.length); //4
+    expect(arr).to.have.lengthOf(4);
   });
 
   it('should have a size of 2 when a value is popped from the array', function() {
     arr.pop();
-    console.log(arr.length); //2
+    expect(arr).to.have.lengthOf(2);
   });
 
-  it('should remove 3 when use pop in the array', function(){
-    console.log(arr.pop() === 3); //true
+  it('should remove 3 after pop', function(){
+    arr.pop();
+    expect(arr).to.not.include(3)
   });
+
+  it('should return true when the popped element is 3', function() {
+    expect(arr.pop() === 3).to.be.true;
+  })
 
 });
