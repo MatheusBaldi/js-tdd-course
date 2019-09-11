@@ -1,50 +1,57 @@
 const expect = require('chai').expect;
+const calc = require('../src/main');
 
-describe('Main', function() {
-  let arr; // define a variávvel no escopo mais alto
+describe('Calc', function() {
 
-  // roda uma vez antes de todos os it
-  before(function() {
-    // abre conexão com banco
-    // cria conjunto de dados
+  // Smoke tests (verifica funcionamentos básicos, ex: verifica se os métodos existem)
+  describe('Smoke tests', function() {
+    it('should exist the calc lib', function() {
+      expect(calc).to.exist;
+    });
+
+    it('should exist a `sub` method', function() {
+      expect(calc.sub).to.exist;
+      expect(calc.sub).to.be.a('function');
+    });
+
+    it('should exist a `mult` method', function() {
+      expect(calc.mult).to.exist;
+      expect(calc.mult).to.be.a('function');
+    });
+
+    it('should exist a `div` method', function() {
+      expect(calc.div).to.exist;
+      expect(calc.div).to.be.a('function');
+    });
   });
 
-  // roda uma vez depois de todos os it
-  after(function() {
-    // fecha conexão com banco
-    // apaga conjunto de dados
+  describe('Sum', function() {
+    it('should return 4 when `sum(2,2)`', function() {
+      expect(calc.sum(2,2)).to.be.equal(4);
+    });
+
+    it('should return 4 when `sub(6,2)`', function() {
+      expect(calc.sub(6,2)).to.be.equal(4);
+    });
+
+    it('should return -4 when `sub(6,10)`', function() {
+      expect(calc.sub(6,10)).to.be.equal(-4);
+    });
   });
 
-  // roda uma vez antes de cada it
-  beforeEach(function() {
-    arr = [1, 2, 3]; // reseta o valor da variável para cada it
+  describe('Mult', function() {
+    it('should return 4 when `mult(2,2)`', function() {
+      expect(calc.mult(2, 2)).to.be.equal(4);
+    });
   });
 
-  // roda uma vez depois de cada it
-  afterEach(function() {
-  });
+  describe('Div', function() {
+    it('should return 2 when `div(4,2)`', function() {
+      expect(calc.div(4,2)).to.be.equal(2);
+    });
 
-  it('should be an array', function() {
-    expect(arr).to.be.an('array');
-  });
-
-  it('should have a size of 4 when pushed another value to the array', function() {
-    arr.push(4);
-    expect(arr).to.have.lengthOf(4);
-  });
-
-  it('should have a size of 2 when a value is popped from the array', function() {
-    arr.pop();
-    expect(arr).to.have.lengthOf(2);
-  });
-
-  it('should remove 3 after pop', function(){
-    arr.pop();
-    expect(arr).to.not.include(3)
-  });
-
-  it('should return true when the popped element is 3', function() {
-    expect(arr.pop() === 3).to.be.true;
+    it('should return `Não é possível divisão por zero!` when divide by 0', function() {
+      expect(calc.div(4,0)).to.be.equal('Não é possível divisão por zero!');
+    });
   })
-
 });
