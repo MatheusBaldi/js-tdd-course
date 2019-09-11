@@ -7,8 +7,4 @@ function fizzBuzz(num) {
   return num;
 }
 
-function foo() {
-  return 'bla';
-}
-
 export default fizzBuzz;
